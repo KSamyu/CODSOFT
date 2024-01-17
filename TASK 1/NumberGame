@@ -1,0 +1,45 @@
+package codesoft;
+import java.util.*;
+public class NumberGame {
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("------------");
+        System.out.println("NUMBER GAME");
+        System.out.println("------------");
+        System.out.println("Let's play\n***********************************************\n1.PLAYER WILL HAVE 5 ATEMPTS TO GUESS THE NUMBER");
+        System.out.println("2.THE PLAYER CAN GUESS THE NUMBER BETWEEN 1 TO 100 AND \n THE SYSTEM WILL PROMPT THE PLAYER WHETHER IT IS CORRECT OR NOT");
+        System.out.println("***********************************************");
+        Random r=new Random();
+        int l=1;
+        int h=100;
+        int num=r.nextInt(h-l+1)+l;
+        
+        int g;
+        int a=0;
+        System.out.println("JUST CHOOSE A NUMBER BETWEEN 1 AMD 100");
+        do{
+            System.out.println("Enter your guessing number:");
+            g=sc.nextInt();
+            a++;
+            if(g<num)
+            {
+                System.out.println("Too low!!!Try again!!!");
+            }else if(g>num)
+            {
+                 System.out.println("Too high!!!Try again!!!");
+                 
+            }
+            else 
+            {
+                System.out.println("Congratulations!!!You correctly guessed the number in "+a+"attempts");
+            }
+        }while((g!=num)&&(a!=5));
+        if((g!=num)&(a==5))
+        {System.out.println("*************************************");
+            System.out.println("THE NUMBER IS:"+num);
+            System.out.println("SORRY!!!BETTER LUCK NEXT TIME!!!");
+            System.out.println("*************************************");
+        }
+    }
+}

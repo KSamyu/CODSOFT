@@ -1,0 +1,62 @@
+package codesoft;
+import java.util.*;
+class StudCalc{
+Scanner sc=new Scanner(System.in);
+public int tmcalc(int ns)
+{   System.out.println("-------------------------------------------");
+    System.out.println("MARKS OBTAINED(OUT OF 100) IN EACH SUBJECT");
+    System.out.println("-------------------------------------------");
+    int []m=new int[10];
+    int sum=0;
+    for(int i=1;i<=ns;i++)
+    {
+    System.out.println(" Enter the mark of Subject"+i);
+    m[i]=sc.nextInt();
+    sum+=m[i];
+   }
+    System.out.println("-------------------------------------------");
+    System.out.println("YOUR GRADE IS CALCULATED SUCCESSFULLY!!!");
+    System.out.println("-------------------------------------------");
+    for(int i=1;i<=ns;i++)
+    {
+    System.out.println("Mark of Subject"+i+":"+m[i]);
+    }
+    System.out.println("TOTAL marks     :"+sum);
+    int avg=sum/ns;
+    System.out.println("AVERAGE of marks:"+avg);
+    return avg;
+    
+  }
+public void gradecalc(int avg)
+{
+    
+    System.out.println("YOUR GRADE IS :");
+   if(avg>=90)
+   System.out.println("O");
+   else if(avg>=80&&avg<90)
+    System.out.println("A+");
+   else if(avg>=70&&avg<80)
+    System.out.println("A");
+   else if(avg>=60&&avg<70)
+    System.out.println("B+");
+   else if(avg>=50&&avg<60)
+    System.out.print("B");
+ else
+       System.out.println("FAIL");
+   }
+}
+public class Student {
+public static void main(String [] args)
+{
+    Scanner sc=new Scanner(System.in);
+    System.out.println("------------------------------------");
+    System.out.println("WELCOME TO STUDENT GRADE CALCULATOR");
+    System.out.println("------------------------------------");
+    System.out.println("Enter the number of subjects");
+    int ns=sc.nextInt();
+    StudCalc s=new StudCalc();
+    int a1=   s.tmcalc(ns);
+    s.gradecalc((int) a1);
+   
+}
+}
